@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodSoft Scientific Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+     <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div class="calculator">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            CodSoft Scientific Calculator
+        </div>
+        <div class="card-body">
+            <input type="text" id="display" class="form-control mb-2" readonly>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-secondary btn-block" onclick="clearDisplay()">C</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary btn-block" onclick="appendToDisplay('/')">/</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary btn-block" onclick="appendToDisplay('*')">*</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary btn-block" onclick="appendToDisplay('Math.sqrt(')">√</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-light btn-block" onclick="appendToDisplay('7')">7</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light btn-block" onclick="appendToDisplay('8')">8</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light btn-block" onclick="appendToDisplay('9')">9</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary btn-block" onclick="appendToDisplay('Math.pow(')">^</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-light btn-block" onclick="appendToDisplay('4')">4</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light btn-block" onclick="appendToDisplay('5')">5</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light btn-block" onclick="appendToDisplay('6')">6</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary btn-block" onclick="appendToDisplay('Math.sin(')">sin</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-light btn-block" onclick="appendToDisplay('1')">1</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light btn-block" onclick="appendToDisplay('2')">2</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-light btn-block" onclick="appendToDisplay('3')">3</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary btn-block" onclick="appendToDisplay('Math.cos(')">cos</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-light btn-block" onclick="appendToDisplay('0')">0</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary btn-block" onclick="appendToDisplay('.')">.</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary btn-block" onclick="calculate()">=</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary btn-block" onclick="appendToDisplay('Math.tan(')">tan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Calculator Logic -->
+<script>
+    function appendToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+        try {
+            document.getElementById('display').value = eval(document.getElementById('display').value);
+        } catch (error) {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+</script>
+</body>
+</html>
