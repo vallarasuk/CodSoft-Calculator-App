@@ -6,6 +6,24 @@ body {
     margin: 0;
 }
 .calculator {
-    max-width: 700px;
     margin: auto;
+}
+
+.btn.btn-light.btn-block, .btn.btn-secondary.btn-block{
+    padding: 30px;
+    background: gray;
+    border-radius: 30%;
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.btn.btn-light.btn-block:hover{
+    padding: 30px;
+    background: red;
+    border-radius: 30%;
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
 }
